@@ -27,7 +27,7 @@ namespace DesafioFundamentos.Models
             }
 
             veiculos.Add(placa);
-            Console.WriteLine("Carro adicionado com sucesso")
+            Console.WriteLine("Carro adicionado com sucesso");
         }
 
         public void RemoverVeiculo()
