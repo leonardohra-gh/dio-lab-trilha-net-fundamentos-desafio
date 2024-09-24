@@ -4,7 +4,7 @@ namespace DesafioFundamentos.Models
     {
         private decimal precoInicial = 0;
         private decimal precoPorHora = 0;
-        private List<string> veiculos = new List<string>();
+        private List<string> veiculos = new();
 
         public Estacionamento(decimal precoInicial, decimal precoPorHora)
         {
@@ -14,9 +14,20 @@ namespace DesafioFundamentos.Models
 
         public void AdicionarVeiculo()
         {
-            // TODO: Pedir para o usuário digitar uma placa (ReadLine) e adicionar na lista "veiculos"
-            // *IMPLEMENTE AQUI*
             Console.WriteLine("Digite a placa do veículo para estacionar:");
+            string placa = Console.ReadLine();
+
+            foreach (string placaCarro in veiculos)
+            {
+                if(placa.Equals(placaCarro))
+                {
+                    Console.WriteLine("Já existe um carro estacionado com essa placa");
+                    return;
+                }
+            }
+
+            veiculos.Add(placa);
+            Console.WriteLine("Carro adicionado com sucesso")
         }
 
         public void RemoverVeiculo()
